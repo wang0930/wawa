@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    hhhh
+    <script>
+        function setCookie(attr,vaule,day){
+            var str="";
+            str +=attr+"="+vaule+";";
+        if(day){
+            var date=new Date();
+            var today= date.getDate();
+            date.setDate(day+today);
+            str +="expires="+date;
+        }
+        document.cookie =str;
+        }
+        setCookie('name1','www',19);
+        setCookie('name2','ww',20);
+        setCookie('name3','w',21);
+        function getCookie(key){
+        var str=document.cookie;
+        var arr=str.split('; ');
+        for(var i=0; i<arr.length; i++){
+                var arr1 = arr[i].split('=');   //["name","zs"]
+                if(arr1[0] == key){
+                    return arr1[1];
+                }
+            }
+            return "";
+        }
+        console.log( getCookie('name2') );
+    </script>
+</body>
+
+</html>

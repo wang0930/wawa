@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            background: blue;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"> </div>
+    <script>
+        var odiv = document.getElementById('div1');
+        odiv.onmousedown = function (e) {
+            e = e || window.event;
+            var xdis = e.clientX - odiv.offsetLeft;
+            var ydis = e.clientY - odiv.offsetTop
+            document.onmousemove = function (e) {
+                odiv.style.left = e.clientX - xdis + "px";
+                odiv.style.top = e.clientY - ydis + "px";
+                //左
+                if (odiv.offsetLeft < 0) {
+                    odiv.style.left = 0;
+                }
+                //上
+                if (odiv.offsetTop < 0) {
+                    odiv.style.top = 0;
+                }
+                //右
+                var xmax = document.documentElement.clientWidth - odiv.offsetWidth;
+                if (odiv.offsetLeft > xmax) {
+                    odiv.style.left = xmax + "px";
+
+                }
+                //下
+                var ymax = document.documentElement.clientHeight - odiv.offsetHeight;
+                if (odiv.offsetTop > ymax) {
+                    odiv.style.top = ymax + "px";
+                }
+            }
+        }
+        odiv.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    </script>
+</body>
+
+</html>

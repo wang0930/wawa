@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #cationer h2{
+                background: black;
+                color: white;
+                width: 200px;
+    
+        }
+         #cationer{
+                width: 200px;
+                border: 1px solid black;
+         }
+         #cationer ul{
+             display: none;
+         }
+        </style>
+</head>
+<body>
+    <ul id="cationer">
+        <li>
+            <h2>管理区</h2>
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+            </ul>
+        </li>
+        <li>
+            <h2>交流区</h2>
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+       var oah=document.getElementsByTagName('h2'); 
+       for(var i=0; i<oah.length; i++)
+       {
+           oah[i].flag=true;
+           oah[i].onclick = function(){
+               var oUl=next(this);
+          
+           if(this.flag){
+                    oUl.style.display = "block";
+                }else{
+                    oUl.style.display = "none";
+                }
+                this.flag = !this.flag;
+       }
+        }
+        function next(elem){
+               do{
+            elem = elem.nextSibling;
+
+        }while(elem&&elem.nodeType !=1)
+        return elem;
+        }
+     
+    </script>
+</body>
+</html>
