@@ -39,18 +39,18 @@
                 this.studentList = 
                 console.log("created",this.$el,this.$data,this.add);
             },
-            beforeMount(){  //{{ shuju}}
+            beforeMount(){  //挂载前
                 console.log("beforeMount",this.$el,this.$data);
             },
-            mounted(){       //shuju
+            mounted(){       //挂载后
                 console.log("mounted",this.$el,this.$data);
             },
-            beforeUpdate(){ //更新前
+            beforeUpdate(){ // 数据改了 更新前
                 var app = document.getElementById('app');
                 console.log(app.innerHTML);
                 console.log("beforeUpdate",this.$el,this.$data);
             },
-            updated(){     //更新后
+            updated(){     //  页面改更新后
                 var app = document.getElementById('app');
                 console.log(app.innerHTML);
                 console.log("updated",this.$el,this.$data);
