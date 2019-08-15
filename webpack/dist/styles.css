@@ -1,0 +1,40 @@
+body {
+  background: pink; }
+
+h2 {
+    background:red;
+    height: 400px;
+    background: url(images/b16446e7169f00378d80d8cbf4934822.jpg);
+    transform: rotate(30deg);
+    transition:height 2s ease ;
+    -webkit-animation: run 2s ease 3s;
+            animation: run 2s ease 3s;
+
+
+}
+@-webkit-keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+
+    }
+    100%{
+        width:300px;
+        
+    }
+}
+@keyframes run{
+    0%{
+        width:100px;
+    }
+    50%{
+        width:800px;
+
+    }
+    100%{
+        width:300px;
+        
+    }
+}
