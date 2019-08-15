@@ -77,6 +77,7 @@ module.exports = {
             template: './src/index.html'
         }),
         new ExtractTextPlugin("styles.css"),
+        new webpack.BannerPlugin(''),
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
